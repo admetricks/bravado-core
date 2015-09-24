@@ -38,6 +38,10 @@ def is_param_spec(schema_object_spec):
     return 'in' in schema_object_spec
 
 
+def is_param_nullable(schema_object_spec):
+    return schema_object_spec.get('x-nullable', False)
+
+
 def is_dict_like(spec):
     """Since we're using jsonref, identifying dicts while inspecting a swagger
     spec is no longer limited to the dict type. This takes into account
